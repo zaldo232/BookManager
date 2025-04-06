@@ -9,6 +9,9 @@ using BookManager.Models;
 using Microsoft.Win32;
 using System.IO;
 using System.Windows;
+using System.Printing;
+using System.Windows.Documents;
+using System.Windows.Controls;
 
 namespace BookManager.ViewModels
 {
@@ -97,6 +100,22 @@ namespace BookManager.ViewModels
             return false;
         }
 
+        public ObservableCollection<Book> RecentBooks { get; set; } = new ObservableCollection<Book>();
+
+        private void UpdateRecentBooks()
+        {
+            var recent = Books
+                .OrderByDescending(b => b.PublishedDate)
+                .Take(5)
+                .ToList();
+
+            RecentBooks.Clear();
+            foreach (var book in recent)
+            {
+                RecentBooks.Add(book);
+            }
+        }
+
         // 명령어들
         public ICommand AddCommand { get; }
         public ICommand UpdateCommand { get; }
@@ -104,7 +123,7 @@ namespace BookManager.ViewModels
         public ICommand ClearFilterCommand { get; }
         public ICommand ExportCsvCommand { get; }
         public ICommand ClearAllCommand { get; }
-
+        public ICommand PrintCommand { get; }
         //  생성자
         public MainViewModel()
         {
@@ -128,9 +147,11 @@ namespace BookManager.ViewModels
             ClearFilterCommand = new RelayCommand(_ => ClearFilter());
             ExportCsvCommand = new RelayCommand(_ => ExportToCsv());
             ClearAllCommand = new RelayCommand(_ => ClearAllBooks());
+            PrintCommand = new RelayCommand(_ => PrintBooks());
 
-            //시작할 때 카테고리 통계 업데이트
+            //시작할 때 업데이트
             UpdateCategoryStats();
+            UpdateRecentBooks();
         }
 
         private void AddBook()
@@ -160,6 +181,7 @@ namespace BookManager.ViewModels
             ClearInputs();
             FilteredBooks?.Refresh();
             UpdateCategoryStats();
+            UpdateRecentBooks();
         }
 
         private void UpdateBook()
@@ -198,6 +220,7 @@ namespace BookManager.ViewModels
 
             FilteredBooks?.Refresh();
             UpdateCategoryStats();
+            UpdateRecentBooks();
         }
 
         private void DeleteBook()
@@ -227,6 +250,7 @@ namespace BookManager.ViewModels
 
             FilteredBooks?.Refresh();
             UpdateCategoryStats();
+            UpdateRecentBooks();
         }
 
         private void ClearFilter()
@@ -300,6 +324,7 @@ namespace BookManager.ViewModels
                 FilteredBooks?.Refresh();
                 SelectedBook = null;
                 UpdateCategoryStats();
+                UpdateRecentBooks();
             }
         }
 
@@ -320,6 +345,38 @@ namespace BookManager.ViewModels
                 }
             });
         }
+
+        private void PrintBooks()
+        {
+            FlowDocument doc = new FlowDocument();
+
+            doc.PagePadding = new Thickness(40);
+            doc.ColumnWidth = double.PositiveInfinity; // 한 줄로
+
+            // 제목
+            Paragraph header = new Paragraph(new Run("📚 도서 목록"));
+            header.FontSize = 20;
+            header.FontWeight = FontWeights.Bold;
+            header.TextAlignment = TextAlignment.Center;
+            doc.Blocks.Add(header);
+
+            // 도서 목록
+            foreach (var book in FilteredBooks.Cast<Book>())
+            {
+                var p = new Paragraph();
+                p.Inlines.Add(new Run($"• {book.Title} / {book.Author} / {book.Publisher} / {book.PublishedDate:yyyy-MM-dd} / {book.Category}"));
+                doc.Blocks.Add(p);
+            }
+
+            // 프린트 대화창
+            PrintDialog dlg = new PrintDialog();
+            if (dlg.ShowDialog() == true)
+            {
+                IDocumentPaginatorSource idpSource = doc;
+                dlg.PrintDocument(idpSource.DocumentPaginator, "도서 목록 출력");
+            }
+        }
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged([CallerMemberName] string name = null)

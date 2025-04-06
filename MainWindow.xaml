@@ -18,6 +18,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <!-- 검색 & 필터 & 내보내기-->
@@ -29,6 +30,7 @@
                       SelectedItem="{Binding SelectedCategory}" />
             <Button Content="초기화" Width="70" Margin="5" Command="{Binding ClearFilterCommand}" />
             <Button Content="CSV 내보내기" Width="100" Margin="5" Command="{Binding ExportCsvCommand}" />
+            <Button Content="프린트" Width="80" Margin="5" Command="{Binding PrintCommand}" />
         </StackPanel>
 
         <!-- 도서 입력 -->
@@ -68,5 +70,14 @@
             </ItemsControl>
         </GroupBox>
 
+        <GroupBox Grid.Row="4" Header="최근 추가된 도서 (최신 순)" Margin="0,10,0,0">
+            <ItemsControl ItemsSource="{Binding RecentBooks}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Title}" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </GroupBox>
     </Grid>
 </Window>

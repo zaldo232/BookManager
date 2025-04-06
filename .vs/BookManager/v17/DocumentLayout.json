@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\zaldo\\Documents\\GitHub\\BookManager\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{62609A28-9671-4A0A-9FC2-4EB21781220C}|BookManager.csproj|c:\\users\\zaldo\\documents\\github\\bookmanager\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{62609A28-9671-4A0A-9FC2-4EB21781220C}|BookManager.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{62609A28-9671-4A0A-9FC2-4EB21781220C}|BookManager.csproj|c:\\users\\zaldo\\documents\\github\\bookmanager\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62609A28-9671-4A0A-9FC2-4EB21781220C}|BookManager.csproj|solutionrelative:models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62609A28-9671-4A0A-9FC2-4EB21781220C}|BookManager.csproj|c:\\users\\zaldo\\documents\\github\\bookmanager\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62609A28-9671-4A0A-9FC2-4EB21781220C}|BookManager.csproj|solutionrelative:viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62609A28-9671-4A0A-9FC2-4EB21781220C}|BookManager.csproj|c:\\users\\zaldo\\documents\\github\\bookmanager\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{62609A28-9671-4A0A-9FC2-4EB21781220C}|BookManager.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62609A28-9671-4A0A-9FC2-4EB21781220C}|BookManager.csproj|c:\\users\\zaldo\\documents\\github\\bookmanager\\viewmodels\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62609A28-9671-4A0A-9FC2-4EB21781220C}|BookManager.csproj|solutionrelative:viewmodels\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,33 +30,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RelayCommand.cs",
-              "DocumentMoniker": "C:\\Users\\zaldo\\Documents\\GitHub\\BookManager\\ViewModels\\RelayCommand.cs",
-              "RelativeDocumentMoniker": "ViewModels\\RelayCommand.cs",
-              "ToolTip": "C:\\Users\\zaldo\\Documents\\GitHub\\BookManager\\ViewModels\\RelayCommand.cs",
-              "RelativeToolTip": "ViewModels\\RelayCommand.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA+wBYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T15:23:53.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainViewModel.cs",
               "DocumentMoniker": "C:\\Users\\zaldo\\Documents\\GitHub\\BookManager\\ViewModels\\MainViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\MainViewModel.cs",
               "ToolTip": "C:\\Users\\zaldo\\Documents\\GitHub\\BookManager\\ViewModels\\MainViewModel.cs",
               "RelativeToolTip": "ViewModels\\MainViewModel.cs",
-              "ViewState": "AgIAABgBAAAAAAAAAAAiwDMBAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAGIBAAAAAAAAAAAmwHsBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-05T12:19:04.068Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\zaldo\\Documents\\GitHub\\BookManager\\Models\\Book.cs",
               "RelativeDocumentMoniker": "Models\\Book.cs",
@@ -73,7 +56,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\zaldo\\Documents\\GitHub\\BookManager\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",

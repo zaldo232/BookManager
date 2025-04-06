@@ -146,3 +146,4 @@ C:\Users\zaldo\Documents\GitHub\BookManager\obj\Debug\net8.0-windows\BookManager
 C:\Users\zaldo\Documents\GitHub\BookManager\obj\Debug\net8.0-windows\BookManager.genruntimeconfig.cache
 C:\Users\zaldo\Documents\GitHub\BookManager\obj\Debug\net8.0-windows\ref\BookManager.dll
 C:\Users\zaldo\Documents\GitHub\BookManager\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\zaldo\Documents\GitHub\BookManager\obj\Debug\net8.0-windows\BookManager.sourcelink.json
